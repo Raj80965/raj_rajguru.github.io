@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us - Drone and Robotics Club</title>
+  <link rel="stylesheet" href="futuristic.css">
+   <!-- FONT AWESOME FOR SOCIAL ICONS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+<body>
+
+  <!-- NAVBAR (same as home) -->
+  <div class="navbar">
+    <div class="nav-title">
+      <img src="logo1.png" alt="Club Logo" class="logo">
+      <span>Drone and Robotics Club</span>
+    </div>
+
+      <!-- 3 line menu -->
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+      <!-- menu links -->
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="projects.html">Projects</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+        <a href="guests.html">Guest Speakers</a>
+
+    </div>
+  </div>
+
+  <!-- COLLEGE DETAILS -->
+  <div class="college-details">
+    <h2>🏫 About Our College</h2>
+
+    <p>
+      <strong>Sagar Institute of Science, Technology & Research (SISTec-R)</strong>
+      is one of the premier technical institutions in Bhopal, Madhya Pradesh,
+      dedicated to excellence in engineering, innovation, and research.
+    </p>
+
+    <div class="college-info">
+      <p><strong>📍 Location:</strong> Ratibad, Bhopal, Madhya Pradesh – 462044</p>
+      <p><strong>🎓 Affiliated To:</strong> Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)</p>
+      <p><strong>🏛️ Approved By:</strong> AICTE, New Delhi</p>
+      <p><strong>📚 Courses Offered:</strong> B.Tech, Pharmacy, Managements</p>
+      <p><strong>🏆 Focus Areas:</strong> Engineering, Innovation, Research & Entrepreneurship</p>
+    </div>
+  </div>
+
+
+
+  <!-- CLUB INAUGURATION -->
+  <div class="inauguration">
+    <h2>🎉 Club Inauguration</h2>
+
+    <p>
+      The <strong>Drone and Robotics Club</strong> was officially inaugurated
+      with the vision of promoting innovation, hands-on learning, and
+      emerging technologies among engineering students.
+    </p>
+
+    <div class="inaug-details">
+      <p><strong>📅 Date:</strong> 27 December 2025</p>
+
+      <p><strong>📍 Venue:</strong> SISTec-R Campus, Bhopal</p>
+      <p><strong>🎤 Inaugurated By:</strong> Principal & Management, SISTec-R</p>
+      <p><strong>🎯 Objective:</strong> To encourage robotics, drones, IoT & practical engineering skills</p>
+    </div>
+  </div>
+
+  
+
+
+  
+  <!-- ABOUT CONTENT -->
+  <div class="about">
+    <h1>About Us</h1>
+
+    <p>
+      Drone and Robotics Club is a technical student club focused on
+      robotics, drones, and modern technologies. The club provides
+      hands-on learning opportunities to students.
+    </p>
+
+    <h2>Why This Club Was Formed</h2>
+    <p>
+      This club was formed to help students gain practical knowledge
+      beyond classroom learning and to encourage innovation and teamwork.
+    </p>
+
+    <h2>Mission</h2>
+    <p>
+      To develop practical skills in robotics, drones, and automation
+      through hands-on projects and activities.
+    </p>
+
+    <h2>Vision</h2>
+    <p>
+      To create future-ready engineers through innovation, creativity,
+      and real-world problem solving.
+    </p>
+
+    <h2>Activities</h2>
+    <ul>
+      <li>Drone building and flying</li>
+      <li>Robotics projects</li>
+      <li>IoT and automation</li>
+      <li>Workshops and competitions</li>
+    </ul>
+  </div>
+
+  <!-- FUNDING & SUPPORT PARTNERS -->
+  <div class="funding">
+    <h2>🤝 Our Funding & Support Partners</h2>
+
+    <div class="funding-logos">
+      <img src="image/team-photo/iste.png" alt="ISTE">
+      <img src="image/team-photo/iic.png" alt="Institution Innovation Council">
+      <img src="image/team-photo/sistec.png" alt="SISTec College">
+       <img src="logo1.png" alt="Drone and Robotics Club">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>Drone and Robotics Club</h3>
+      <p>Innovation | Robotics | Drone Technology</p>
+
+      <p class="college">
+        College: Sagar Institute of Science Technology & Engineering/ Research<br>
+        Bhopal, Madhya Pradesh, India
+      </p>
+
+      <div class="social-links">
+        <a href="#" title="Instagram">📸 Instagram</a>
+        <a href="#" title="YouTube">▶️ YouTube</a>
+        <a href="#" title="LinkedIn">💼 LinkedIn</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 Drone and Robotics Club. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script>
+    const sound = document.getElementById("clickSound");
+
+    document.querySelectorAll("a, button, .menu-icon").forEach(item => {
+      item.addEventListener("click", () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+  </script>
+
+
+
+  <script src="script.js"></script>
+
+  <script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

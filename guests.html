@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Guest Speakers Entry</title>
+<link rel="stylesheet" href="futuristic.css">
+
+<style>
+/* ===== GUEST SECTION ===== */
+.guest-section{
+  max-width:1100px;
+  margin:90px auto;
+  padding:60px;
+  background:linear-gradient(135deg,#062a3a,#031622);
+  border-radius:30px;
+  border:1px solid rgba(0,242,255,0.45);
+  box-shadow:0 0 45px rgba(0,242,255,0.35);
+}
+
+.guest-section h2{
+  text-align:center;
+  color:#00f2ff;
+  font-size:38px;
+  margin-bottom:30px;
+}
+
+/* FORM */
+.guest-form{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-bottom:40px;
+}
+
+.guest-form input,
+.guest-form select{
+  padding:14px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(0,242,255,0.4);
+  border-radius:10px;
+  color:white;
+  font-size:15px;
+}
+
+.guest-form input::placeholder{
+  color:#bdefff;
+}
+
+.guest-form button{
+  grid-column:1/-1;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(90deg,#00f2ff,#0099ff);
+  color:#00131f;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(0,242,255,0.7);
+}
+
+.guest-form button:hover{
+  transform:translateY(-3px);
+}
+
+/* GUEST CARDS */
+.guest-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.guest-card{
+  background:rgba(0,242,255,0.07);
+  border:1px solid rgba(0,242,255,0.45);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 0 25px rgba(0,242,255,0.35);
+}
+
+.guest-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #00f2ff;
+  margin-bottom:12px;
+}
+
+.guest-card h3{
+  color:#00f2ff;
+  margin-bottom:6px;
+}
+
+.guest-card p{
+  font-size:14px;
+  opacity:0.9;
+  margin:3px 0;
+}
+  /* SELECT DROPDOWN FIX */
+  .guest-form select {
+    background-color: #0b2a3a;
+    color: white;
+  }
+
+  /* OPTION COLOR FIX */
+  .guest-form select option {
+    background-color: #0b2a3a;
+    color: white;
+  }
+
+</style>
+</head>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-title">
+      <img src="logo1.png" class="logo" alt="Logo">
+      <span>Drone and Robotics Club</span>
+    </div>
+
+    <!-- 3 line menu -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- menu links -->
+    <div class="nav-menu" id="navMenu">
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="projects.html">Projects</a>
+      <a href="events.html">Events</a>
+
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="guests.html">Guest Speakers</a>
+ 
+      
+
+    </div>
+  </nav>
+<body>
+
+<div class="guest-section">
+
+  <h2>🎤 Guest Speakers & Visiting Experts</h2>
+
+  <!-- ===== FORM ===== -->
+  <form class="guest-form" id="guestForm">
+
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="designation" placeholder="Designation" required>
+    <input type="text" id="org" placeholder="Organization / College" required>
+    <input type="time" id="time" required>
+
+    <select id="sessionType" required>
+      <option value="">Session Type</option>
+      <option>Guest Lecture</option>
+      <option>Workshop</option>
+      <option>Seminar</option>
+      <option>Webinar</option>
+    </select>
+
+    <input type="email" id="email" placeholder="Guest Email (Admin use)" required>
+
+    <input type="text" id="topic" placeholder="Session Topic" required>
+
+    <select id="domain" required>
+      <option value="">Select Domain</option>
+      <option>Robotics</option>
+      <option>Drones</option>
+      <option>AI / ML</option>
+      <option>IoT</option>
+      <option>Embedded Systems</option>
+    </select>
+
+    <input type="date" id="date" required>
+
+    <!-- PHOTO UPLOAD -->
+    <input type="file" id="photo" accept="image/*" required>
+
+    <input type="password" id="entryPass" placeholder="Admin Password to Add Entry" required>
+
+
+    <button type="submit">Submit Guest Entry</button>
+
+  </form>
+  
+  <div style="text-align:center; margin-bottom:20px;">
+    <input type="password" id="adminPass" placeholder="Admin Password">
+    <button onclick="adminLogin()">Admin Login</button>
+  </div>
+
+  <!-- ===== GUEST LIST ===== -->
+  <div class="guest-list" id="guestList"></div>
+
+
+
+</div>
+
+  <script>
+  const guestList = document.getElementById("guestList");
+
+  /* 🔁 PAGE LOAD – PUBLIC VIEW */
+  window.onload = () => {
+    const guests = JSON.parse(localStorage.getItem("guests")) || [];
+    guests.forEach((g,i)=>addGuestCard(g,i,false));
+  };
+
+  /* 📝 FORM SUBMIT */
+  document.getElementById("guestForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const pass = document.getElementById("entryPass").value;
+
+    // 🔐 PASSWORD CHECK
+    if(pass !== "Raj"){
+      alert("❌ Wrong password. Entry not saved");
+      return;
+    }
+
+    const file = document.getElementById("photo").files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(){
+      const guest = {
+        name: name.value,
+        designation: designation.value,
+        org: org.value,
+        time: time.value,
+        sessionType: sessionType.value,
+        email: email.value,
+        topic: topic.value,
+        domain: domain.value,
+        date: date.value,
+        photo: reader.result
+      };
+
+      const guests = JSON.parse(localStorage.getItem("guests")) || [];
+      guests.push(guest);
+      localStorage.setItem("guests", JSON.stringify(guests));
+
+      addGuestCard(guest, guests.length-1, true);
+      alert("✅ Entry added successfully");
+
+      guestForm.reset();
+    };
+
+    reader.readAsDataURL(file);
+  });
+
+  /* 🧾 CARD FUNCTION */
+  function addGuestCard(g,index,isAdmin){
+    guestList.innerHTML += `
+      <div class="guest-card">
+        <img src="${g.photo}">
+        <h3>${g.name}</h3>
+        <p><b>${g.designation}</b></p>
+        <p>${g.org}</p>
+        <p>🎙 ${g.sessionType}</p>
+        <p>📅 ${g.date} | ⏰ ${g.time}</p>
+        <p>📌 ${g.topic}</p>
+        <p>🔧 ${g.domain}</p>
+
+        ${isAdmin ? `
+        <button onclick="deleteGuest(${index})"
+          style="margin-top:10px;background:red;color:white;
+          border:none;padding:6px 14px;border-radius:20px;">
+          ❌ Delete
+        </button>` : ``}
+      </div>
+    `;
+  }
+
+  /* ❌ DELETE (ADMIN ONLY – password again) */
+  function deleteGuest(index){
+    const pass = prompt("Admin password to delete:");
+
+    if(pass !== "Raj"){
+      alert("❌ Wrong password");
+      return;
+    }
+
+    let guests = JSON.parse(localStorage.getItem("guests")) || [];
+    guests.splice(index,1);
+    localStorage.setItem("guests", JSON.stringify(guests));
+
+    guestList.innerHTML = "";
+    guests.forEach((g,i)=>addGuestCard(g,i,true));
+  }
+  </script>
+
+
+
+
+  <!-- FUNDING & SUPPORT PARTNERS -->
+  <div class="funding">
+    <h2>🤝 Our Funding & Support Partners</h2>
+
+    <div class="funding-logos">
+      <img src="image/team-photo/iste.png" alt="ISTE">
+      <img src="image/team-photo/iic.png" alt="Institution Innovation Council">
+      <img src="image/team-photo/sistec.png" alt="SISTec College">
+       <img src="logo1.png" alt="Drone and Robotics Club">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>Drone and Robotics Club</h3>
+      <p>Innovation | Robotics | Drone Technology</p>
+
+      <p class="college">
+        College: Sagar Institute of Science Technology & Engineering/ Research<br>
+        Bhopal, Madhya Pradesh, India
+      </p>
+
+      <div class="social-links">
+        <a href="#" title="Instagram">📸 Instagram</a>
+        <a href="#" title="YouTube">▶️ YouTube</a>
+        <a href="#" title="LinkedIn">💼 LinkedIn</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 Drone and Robotics Club. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script>
+    const sound = document.getElementById("clickSound");
+
+    document.querySelectorAll("a, button, .menu-icon").forEach(item => {
+      item.addEventListener("click", () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+  </script>
+
+
+
+  <script src="script.js"></script>
+  <script>
+  function openEvent(eventName){
+    window.location.href = "event-gallery.html?event=" + eventName;
+  }
+  </script>
+
+  <script>
+  function openOldVideos(){
+    window.location.href = "old-video-gallery.html";
+  }
+  </script>
+
+  <script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

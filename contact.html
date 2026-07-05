@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us - Drone and Robotics Club</title>
+  <link rel="stylesheet" href="futuristic.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-title">
+    <img src="logo1.png" class="logo">
+    <span>Drone and Robotics Club</span>
+  </div>
+    <!-- 3 line menu -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- menu links -->
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="team.html">Team</a>
+    <a href="projects.html">Projects</a>
+      <a href="events.html">Events</a>
+
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+      <a href="guests.html">Guest Speakers</a>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact">
+  <h1>Contact Us</h1>
+
+  <p class="contact-text">
+    Have questions, ideas, or want to join the club?  
+    Send us a message directly on WhatsApp.
+  </p>
+
+  <!-- FORM -->
+  <form class="contact-form" onsubmit="sendWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="text" id="enrollment" placeholder="Enrollment No." required>
+    <input type="tel" id="contact" placeholder="Contact Number" required>
+
+
+    <input type="text" id="subject" placeholder="Subject">
+    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- SOCIAL CHANNELS -->
+  <div class="contact-channels">
+
+    <a href="https://www.instagram.com/robotics_club_sistec"
+       target="_blank"
+       class="channel insta">
+      📸 Instagram
+      <span>@robotics_club_sistec</span>
+    </a>
+
+    <a href="https://whatsapp.com/channel/0029Vb0H7HgL7UVeWgxpmK1K"
+       target="_blank"
+       class="channel whatsapp">
+      💬 WhatsApp Channel
+      <span>Join our official channel</span>
+    </a>
+
+    <a href="mailto:droneroboticsclub@gmail.com"
+       class="channel email">
+      ✉️ Email
+      <span>droneroboticsclub@gmail.com</span>
+    </a>
+
+    <a href="tel:+917489391648" class="channel call">
+      
+      📞 Call Us
+      <span>+91 7489391648</span>
+    </a>
+
+    </div>
+
+    <!-- LOCATION -->
+    <div class="location">
+      <h2>📍 Our Location</h2>
+      <p>
+        Sagar Institute of Science, Technology & Research (SISTec-R)<br>
+        Ratibad, Sikandarabad, Bhopal, Madhya Pradesh – 462044
+      </p>
+
+      <!-- GOOGLE MAP -->
+      <iframe
+        src="https://www.google.com/maps?q=Sagar+Institute+of+Science+Technology+and+Research+Ratibad+Bhopal&output=embed"
+        width="100%" height="300"
+        style="border:0;border-radius:20px;margin-top:15px;">
+      </iframe>
+    </div>
+
+  </div>
+</div>
+
+  <!-- FUNDING & SUPPORT PARTNERS -->
+  <div class="funding">
+    <h2>🤝 Our Funding & Support Partners</h2>
+
+    <div class="funding-logos">
+      <img src="image/team-photo/iste.png" alt="ISTE">
+      <img src="image/team-photo/iic.png" alt="Institution Innovation Council">
+      <img src="image/team-photo/sistec.png" alt="SISTec College">
+       <img src="logo1.png" alt="Drone and Robotics Club">
+    </div>
+  </div>
+
+  
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>Drone and Robotics Club</h3>
+      <p>Innovation | Robotics | Drone Technology</p>
+
+      <p class="college">
+        College: Sagar Institute of Science Technology & Engineering/ Research<br>
+        Bhopal, Madhya Pradesh, India
+      </p>
+
+      <div class="social-links">
+        <a href="#" title="Instagram">📸 Instagram</a>
+        <a href="#" title="YouTube">▶️ YouTube</a>
+        <a href="#" title="LinkedIn">💼 LinkedIn</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 Drone and Robotics Club. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+<!-- SCRIPT -->
+<script>
+function sendWhatsApp(){
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let subject = document.getElementById("subject").value;
+  let message = document.getElementById("message").value;
+
+  let text =
+    "📩 *New Contact Message*%0A%0A" +
+    "*Name:* " + name + "%0A" +
+    "*Email:* " + email + "%0A" +
+    "*Subject:* " + subject + "%0A%0A" +
+    "*Message:*%0A" + message;
+
+  let phone = "917489391648"; // ← APNA NUMBER DALO
+  let url = "https://wa.me/" + phone + "?text=" + text;
+
+  window.open(url, "_blank");
+}
+</script>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
+  <script>
+    const sound = document.getElementById("clickSound");
+
+    document.querySelectorAll("a, button, .menu-icon").forEach(item => {
+      item.addEventListener("click", () => {
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+  </script>
+
+
+  <script src="script.js"></script>
+
+  <script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

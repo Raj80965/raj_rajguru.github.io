@@ -1,0 +1,571 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+                
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <title>Drone and Robotics Club</title>
+          <link rel="stylesheet" href="futuristic.css">
+        </head>
+        <body>
+
+          <!-- INTRO SCREEN -->
+          <!-- INTRO SCREEN -->
+         <div id="introOverlay">
+
+            <!-- 🔵 BACKGROUND ANIMATION -->
+            <canvas id="bgCanvas"></canvas>
+
+            <!-- 🚁 DRONE -->
+            <canvas id="droneCanvas"></canvas>
+
+            <!-- 🟦 LOGO -->
+            <img src="logo1.png" id="introLogo">
+
+            <!-- 🔊 SOUND -->
+            <audio id="introSound" src="drone.mp3"></audio>
+
+          </div>
+
+
+
+
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+          <div class="nav-title">
+            <img src="logo1.png" class="logo" alt="Logo">
+            <span>Drone and Robotics Club</span>
+          </div>
+
+          <!-- 3 line menu -->
+          <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+          <!-- menu links -->
+          <div class="nav-menu" id="navMenu">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="team.html">Team</a>
+            <a href="projects.html">Projects</a>
+            <a href="events.html">Events</a>
+
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="guests.html">Guest Speakers</a>
+
+          </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+          <h1>Drone and Robotics Club</h1>
+          <p class="tagline">Innovation | Robotics | Drone Technology</p>
+
+          <p class="intro">
+            Drone and Robotics Club is a technical student community where members
+            learn, build, and innovate using robotics, drones, electronics,
+            and automation technologies.
+          </p>
+
+         
+        </section>
+
+        <!-- WHAT WE DO -->
+        <section class="section">
+          <h2>What We Do</h2>
+
+          <div class="ad-grid">
+            <div class="ad-card">
+              <div class="ad-icon">🤖</div>
+              <h3>Robotics Projects</h3>
+              <p>Design and build smart robots using sensors and controllers.</p>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-icon">🚁</div>
+              <h3>Drone Technology</h3>
+              <p>Assemble, test and fly drones with real-world applications.</p>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-icon">🌐</div>
+              <h3>IoT & Automation</h3>
+              <p>Create smart systems using ESP32, sensors and automation.</p>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-icon">🛠</div>
+              <h3>Hands-on Workshops</h3>
+              <p>Learn practically through workshops, events and competitions.</p>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-icon">👥</div>
+              <h3>Peer-to-Peer Learning</h3>
+              <p>
+                Learn together by sharing knowledge, mentoring juniors,
+                and collaborating with fellow club members.
+              </p>
+            </div>
+
+            
+          </div>
+        </section>
+
+        <!-- DOMAINS -->
+        <section class="section">
+          <h2>Our Domains</h2>
+
+          <div class="ad-grid">
+            <div class="ad-card"><div class="ad-icon">⚙️</div><h3>Robotics</h3></div>
+            <div class="ad-card"><div class="ad-icon">🛩️</div><h3>Drone Technology</h3></div>
+            <div class="ad-card"><div class="ad-icon">📡</div><h3>IoT & Electronics</h3></div>
+            <div class="ad-card"><div class="ad-icon">💻</div><h3>Coding</h3></div>
+            <div class="ad-card"><div class="ad-icon">🧠</div><h3>AI & Machine Learning</h3></div>
+            
+          </div>
+        </section>
+
+          <section class="section">
+            <h2>Why Join Our Club?</h2>
+
+            <div class="ad-grid">
+              <div class="ad-card">
+                <div class="ad-icon">🎓</div>
+                <h3>Practical Exposure</h3>
+                <p>Real-world projects beyond classroom learning.</p>
+              </div>
+
+              <div class="ad-card">
+                <div class="ad-icon">🤝</div>
+                <h3>Team Collaboration</h3>
+                <p>Work with seniors and juniors in a friendly environment.</p>
+              </div>
+
+              <div class="ad-card">
+                <div class="ad-icon">🚀</div>
+                <h3>Skill Development</h3>
+                <p>Improve technical, communication and leadership skills.</p>
+              </div>
+
+              <div class="ad-card">
+                <div class="ad-icon">🏆</div>
+                <h3>Events & Competitions</h3>
+                <p>Participate in hackathons, workshops and tech events.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>What You Will Learn</h2>
+
+            <div class="ad-grid">
+              <div class="ad-card">
+                <h3>🔧 Electronics</h3>
+                <p>Sensors, motors, Arduino, ESP32 & circuits.</p>
+              </div>
+
+              <div class="ad-card">
+                <h3>🤖 Robotics</h3>
+                <p>Line follower, obstacle avoiding & smart robots.</p>
+              </div>
+
+              <div class="ad-card">
+                <h3>🛩 Drone Systems</h3>
+                <p>Drone assembly, flight control & safety.</p>
+              </div>
+
+              <div class="ad-card">
+                <h3>🧠 AI & ML</h3>
+                <p>Basics of Python, data & machine learning concepts.</p>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="section">
+            <h2>Who Can Join?</h2>
+
+            <div class="ad-grid">
+              <div class="ad-card">
+                <div class="ad-icon">👨‍🎓</div>
+                <h3>All Branches</h3>
+                <p>CSE, AIML, ECE, EE, ME, IoT & others.</p>
+              </div>
+
+              <div class="ad-card">
+                <div class="ad-icon">📘</div>
+                <h3>All Years</h3>
+                <p>1st year to final year students welcome.</p>
+              </div>
+
+              <div class="ad-card">
+                <div class="ad-icon">🔥</div>
+                <h3>No Experience Needed</h3>
+                <p>Interest & passion is more important.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Ready to Build the Future?</h2>
+
+            <div class="cta-box">
+              <a href="contact.html" class="cta-btn">Join the Club</a>
+              <a href="contact.html" class="cta-btn outline">Contact Us</a>
+            </div>
+          </section>
+
+          <!-- FUNDING & SUPPORT PARTNERS -->
+          <div class="funding">
+            <h2>🤝 Our Funding & Support Partners</h2>
+
+            <div class="funding-logos">
+              <img src="image/team-photo/iste.png" alt="ISTE">
+              <img src="image/team-photo/iic.png" alt="Institution Innovation Council">
+              <img src="image/team-photo/sistec.png" alt="SISTec College">
+              <img src="logo1.png" alt="Drone and Robotics Club">
+            </div>
+          </div>
+
+        <!-- FOOTER -->
+          <footer class="footer">
+            <div class="footer-content">
+              <h3>Drone and Robotics Club</h3>
+              <p>Innovation | Robotics | Drone Technology</p>
+
+              <p class="college">
+                College: Sagar Institute of Science Technology & Engineering/ Research<br>
+                Bhopal, Madhya Pradesh, India
+              </p>
+
+              <div class="social-links">
+                <a href="#" title="Instagram">📸 Instagram</a>
+                <a href="#" title="YouTube">▶️ YouTube</a>
+                <a href="#" title="LinkedIn">💼 LinkedIn</a>
+              </div>
+
+              <p class="copyright">
+                © 2026 Drone and Robotics Club. All rights reserved.
+              </p>
+            </div>
+          </footer>
+
+
+          <audio id="clickSound" src="click.mp3"></audio>
+
+          <script>
+            const sound = document.getElementById("clickSound");
+
+            document.querySelectorAll("a, button, .menu-icon").forEach(item => {
+              item.addEventListener("click", () => {
+                sound.currentTime = 0;
+                sound.play();
+              });
+            });
+          </script>
+
+
+          <script src="script.js"></script>
+
+          
+          <script>
+          window.addEventListener("load", () => {
+            const sound = document.getElementById("introSound");
+            const logo  = document.getElementById("introLogo");
+            const over  = document.getElementById("introOverlay");
+
+            // intro animation
+            logo.classList.add("play");
+
+            // mobile-safe sound unlock
+            sound.muted = true;
+            sound.play().then(() => {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.muted = false;
+              sound.play().catch(()=>{});
+            }).catch(()=>{});
+
+            // fade out
+            setTimeout(() => {
+              over.style.opacity = "0";
+            }, 5400);
+
+            // remove overlay
+            setTimeout(() => {
+              over.style.display = "none";
+            }, 7000);
+          });
+          </script>
+
+
+
+
+
+          <script>
+          /* ========= REALISTIC DRONE CANVAS ========= */
+          const canvas=document.getElementById("droneCanvas");
+          const ctx=canvas.getContext("2d");
+            /* ===== DRONE OBJECT (MISSING THA) ===== */
+            let drone={
+              x: innerWidth/2,
+              y: innerHeight*0.3,
+              vx: 0.5,
+              vy: 0.35
+            };
+
+
+          function resize(){
+            canvas.width=innerWidth;
+            canvas.height=innerHeight;
+          }
+          resize();
+          addEventListener("resize",resize);
+
+            /* ===== ROBOT OBJECT ===== */
+            let robot={
+              x: innerWidth/2,
+              y: innerHeight*0.7,
+              vx: 0.6,
+              dir: 1
+            };
+
+
+          function propeller(x,y){
+            ctx.save();
+            ctx.translate(x,y);
+            ctx.rotate(Date.now()/25);
+
+            const blur=ctx.createRadialGradient(0,0,2,0,0,22);
+            blur.addColorStop(0,"rgba(0,242,255,0.4)");
+            blur.addColorStop(1,"rgba(0,242,255,0.05)");
+
+            ctx.fillStyle=blur;
+            ctx.beginPath();
+            ctx.arc(0,0,22,0,Math.PI*2);
+            ctx.fill();
+            ctx.restore();
+          }
+
+          function drawDrone(){
+            ctx.save();
+            ctx.translate(drone.x,drone.y);
+            ctx.rotate(Math.sin(Date.now()/600)*0.08);
+
+            /* SHADOW */
+            ctx.fillStyle="rgba(0,0,0,0.45)";
+            ctx.beginPath();
+            ctx.ellipse(0,38,70,14,0,0,Math.PI*2);
+            ctx.fill();
+
+            /* BODY – METAL 3D */
+            const g=ctx.createRadialGradient(0,-15,10,0,0,100);
+            g.addColorStop(0,"#2b3e4a");
+            g.addColorStop(0.6,"#0f1e26");
+            g.addColorStop(1,"#02090e");
+            ctx.fillStyle=g;
+            ctx.shadowColor="#00f2ff";
+            ctx.shadowBlur=30;
+            ctx.beginPath();
+            ctx.roundRect(-70,-26,140,52,26);
+            ctx.fill();
+            ctx.shadowBlur=0;
+
+            /* CAMERA */
+            ctx.fillStyle="#000";
+            ctx.beginPath();
+            ctx.arc(0,10,10,0,Math.PI*2);
+            ctx.fill();
+            ctx.fillStyle="#00f2ff";
+            ctx.beginPath();
+            ctx.arc(0,10,4,0,Math.PI*2);
+            ctx.fill();
+
+            /* ARMS */
+            ctx.strokeStyle="#00f2ff";
+            ctx.lineWidth=3;
+            ctx.beginPath();
+            ctx.moveTo(-95,0);ctx.lineTo(-70,0);
+            ctx.moveTo(95,0);ctx.lineTo(70,0);
+            ctx.moveTo(0,-45);ctx.lineTo(0,-26);
+            ctx.moveTo(0,45);ctx.lineTo(0,26);
+            ctx.stroke();
+
+            /* MOTORS + PROPS */
+            [[-95,0],[95,0],[0,-45],[0,45]].forEach(p=>{
+              ctx.fillStyle="#111";
+              ctx.beginPath();
+              ctx.arc(p[0],p[1],7,0,Math.PI*2);
+              ctx.fill();
+              propeller(p[0],p[1]);
+            });
+
+            /* LEDS */
+            const blink=Math.sin(Date.now()/300)>0;
+            ctx.fillStyle=blink?"lime":"#033";
+            ctx.beginPath();
+            ctx.arc(-30,-8,4,0,Math.PI*2);
+            ctx.fill();
+            ctx.fillStyle=blink?"red":"#300";
+            ctx.beginPath();
+            ctx.arc(30,-8,4,0,Math.PI*2);
+            ctx.fill();
+
+            ctx.restore();
+          }
+
+            function drawRobot(){
+              ctx.save();
+              ctx.translate(robot.x, robot.y);
+
+              /* SHADOW */
+              ctx.fillStyle="rgba(0,0,0,0.5)";
+              ctx.beginPath();
+              ctx.ellipse(0,38,45,12,0,0,Math.PI*2);
+              ctx.fill();
+
+              /* BODY */
+              const bodyGrad=ctx.createLinearGradient(0,-40,0,40);
+              bodyGrad.addColorStop(0,"#1b3a4a");
+              bodyGrad.addColorStop(1,"#020b12");
+              ctx.fillStyle=bodyGrad;
+              ctx.shadowColor="#00f2ff";
+              ctx.shadowBlur=20;
+              ctx.beginPath();
+              ctx.roundRect(-30,-30,60,60,12);
+              ctx.fill();
+              ctx.shadowBlur=0;
+
+              /* HEAD */
+              ctx.fillStyle="#0b1c26";
+              ctx.beginPath();
+              ctx.roundRect(-22,-70,44,32,10);
+              ctx.fill();
+
+              /* EYES */
+              ctx.fillStyle="#00f2ff";
+              ctx.beginPath();
+              ctx.arc(-8,-54,4,0,Math.PI*2);
+              ctx.arc(8,-54,4,0,Math.PI*2);
+              ctx.fill();
+
+              /* ANTENNA */
+              ctx.strokeStyle="#00f2ff";
+              ctx.lineWidth=2;
+              ctx.beginPath();
+              ctx.moveTo(0,-70);
+              ctx.lineTo(0,-85);
+              ctx.stroke();
+              ctx.beginPath();
+              ctx.arc(0,-88,3,0,Math.PI*2);
+              ctx.fill();
+
+              /* WHEELS */
+              ctx.fillStyle="#111";
+              [-26,26].forEach(x=>{
+                ctx.beginPath();
+                ctx.arc(x,34,10,0,Math.PI*2);
+                ctx.fill();
+
+                ctx.strokeStyle="#00f2ff";
+                ctx.lineWidth=2;
+                ctx.beginPath();
+                ctx.arc(x,34,10,0,Math.PI*2);
+                ctx.stroke();
+              });
+
+              ctx.restore();
+            }
+
+            
+            function animate(){
+              ctx.clearRect(0,0,canvas.width,canvas.height);
+
+              /* DRONE MOVEMENT */
+              drone.x+=drone.vx;
+              drone.y+=drone.vy;
+              if(drone.x<120||drone.x>canvas.width-120)drone.vx*=-1;
+              if(drone.y<120||drone.y>canvas.height*0.45)drone.vy*=-1;
+
+              /* ROBOT MOVEMENT */
+              robot.x+=robot.vx*robot.dir;
+              if(robot.x>canvas.width-80||robot.x<80){
+                robot.dir*=-1;
+              }
+
+              drawDrone();
+              drawRobot();
+
+              requestAnimationFrame(animate);
+            }
+            animate();
+
+          </script>
+
+
+
+<script>
+const bg = document.getElementById("bgCanvas");
+const bctx = bg.getContext("2d");
+
+function resizeBG(){
+  bg.width = innerWidth;
+  bg.height = innerHeight;
+}
+resizeBG();
+window.addEventListener("resize", resizeBG);
+
+const dots = [];
+
+for(let i=0;i<120;i++){
+  dots.push({
+    x: Math.random()*bg.width,
+    y: Math.random()*bg.height,
+    r: Math.random()*2+0.5,
+    v: Math.random()*0.4+0.1
+  });
+}
+
+function animateBG(){
+  bctx.clearRect(0,0,bg.width,bg.height);
+
+  dots.forEach(d=>{
+    d.y += d.v;
+    if(d.y > bg.height){
+      d.y = -5;
+      d.x = Math.random()*bg.width;
+    }
+
+    bctx.beginPath();
+    bctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+    bctx.fillStyle="rgba(0,242,255,0.6)";
+    bctx.fill();
+  });
+
+  requestAnimationFrame(animateBG);
+}
+
+animateBG();
+</script>
+
+        <script>
+if (window.innerWidth < 768) {
+  const canvas = document.getElementById("droneCanvas");
+  if (canvas) canvas.style.display = "none";
+}
+</script>
+
+
+
+<script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+          
+        </body>
+        </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Gallery</title>
+  <link rel="stylesheet" href="futuristic.css">
+</head>
+<body>
+
+<div class="gallery">
+  <h2 class="section-title">📸 Event Gallery</h2>
+  <h3 id="eventTitle" style="text-align:center;color:white;"></h3>
+
+  <div class="event-photos" id="photos"></div>
+  <!-- FULL SCREEN VIEW -->
+  <div id="imageViewer" onclick="closeImage()">
+    <img id="viewerImg">
+  </div>
+
+</div>
+
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const eventName = params.get("event");
+
+  const container = document.getElementById("photos");
+
+  for(let i = 1; i <= 30; i++){
+    const img = document.createElement("img");
+    img.src = `image/events/${eventName}/${i}.jpg`;
+
+    // 🔥 YAHI MAIN LINE HAI
+    img.addEventListener("click", () => openImage(img));
+
+    img.onerror = () => img.remove();
+    container.appendChild(img);
+  }
+
+  // IMAGE OPEN
+  function openImage(img){
+    document.getElementById("viewerImg").src = img.src;
+    document.getElementById("imageViewer").style.display = "flex";
+  }
+
+  // IMAGE CLOSE
+  function closeImage(){
+    document.getElementById("imageViewer").style.display = "none";
+  }
+  </script>
+
+
+  <audio id="clickSound" src="click.mp3"></audio>
+  <script>
+    const sound = document.getElementById("clickSound");
+
+    function openImage(img){
+      // 🔊 SOUND PLAY
+      if(sound){
+        sound.currentTime = 0;
+        sound.play();
+      }
+
+      // 📸 IMAGE OPEN
+      document.getElementById("viewerImg").src = img.src;
+      document.getElementById("imageViewer").style.display = "flex";
+    }
+
+    function closeImage(){
+      document.getElementById("imageViewer").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

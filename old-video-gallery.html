@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Old Videos</title>
+  <link rel="stylesheet" href="futuristic.css">
+</head>
+<body>
+
+<div class="gallery">
+  <h2 class="section-title">🎬 Other College Old Videos</h2>
+
+  <div class="video-grid" id="videoGrid"></div>
+
+  <!-- FULLSCREEN -->
+    <div id="videoViewer" class="no-sound" onclick="closeVideo(event)">
+
+    <video id="viewerVideo" controls></video>
+  </div>
+</div>
+
+  <script>
+  const grid = document.getElementById("videoGrid");
+  const viewer = document.getElementById("videoViewer");
+  const viewerVideo = document.getElementById("viewerVideo");
+
+  for(let i = 1; i <= 10; i++){
+    const v = document.createElement("video");
+    v.src = "image/events/old-videos/" + i + ".mp4";
+    v.muted = true;
+    v.playsInline = true;
+    v.preload = "metadata";
+
+    v.onclick = function(e){
+      e.stopPropagation();
+      viewer.style.display = "flex";
+      viewerVideo.src = this.src;
+      viewerVideo.currentTime = 0;
+      viewerVideo.muted = false;
+      viewerVideo.play();
+    };
+
+    v.onerror = () => v.remove();
+    grid.appendChild(v);
+  }
+
+  function closeVideo(){
+    viewerVideo.pause();
+    viewerVideo.currentTime = 0;
+    viewerVideo.src = "";
+    viewer.style.display = "none";
+  }
+  </script>
+
+
+  <script>
+  /* 🔇 Disable click sound on this page */
+  const clickAudio = document.getElementById("clickSound");
+  if (clickAudio) {
+    clickAudio.remove();
+  }
+  </script>
+
+</body>
+</html>
